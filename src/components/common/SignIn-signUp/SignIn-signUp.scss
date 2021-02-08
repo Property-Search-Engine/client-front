@@ -1,0 +1,10 @@
+.logIn-logOut {
+    background-color: $login-signup !important;
+    color: black !important;
+    float: right;
+    margin: 10px;
+    border: none;
+    &:hover {
+        background-color: $primary-orange !important;
+    }
+  }

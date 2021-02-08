@@ -1,3 +1,8 @@
+
 @import "./partials/colors";
 @import "./partials/fonts";
 @import "./partials/breakpoints";
+@import "../components/common/HeaderComponent/HeaderComponent.scss";
+@import "~bootstrap/scss/bootstrap";
+@import "../components/common/Menu/Menu.scss";
+@import "../components/common/SignIn-signUp/SignIn-signUp.scss";
