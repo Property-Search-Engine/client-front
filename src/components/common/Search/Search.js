@@ -8,6 +8,8 @@ export default class Search extends React.Component {
 
     this.state = {
       query: '',
+      results: '47',
+      location: 'Vancouver, CA',
 
       fixtures: {
         placeholder: 'Search...',
@@ -36,6 +38,11 @@ export default class Search extends React.Component {
 
           <i className={this.state.fixtures.icon}></i>
         </div>
+
+        <p className="results">
+          <span className="num">{this.state.results} Results</span> in{' '}
+          {this.state.location}
+        </p>
       </div>
     );
   }
