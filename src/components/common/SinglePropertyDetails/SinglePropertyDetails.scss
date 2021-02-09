@@ -1,6 +1,11 @@
 @import "../../../styles/main.scss";
+.propertyCharacteristics {
+  width: 100%;
+}
 
 .detailsContainer {
+  padding-bottom: 10px;
+
   p {
     margin-bottom: 0;
   }
