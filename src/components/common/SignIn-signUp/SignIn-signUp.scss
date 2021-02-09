@@ -1,0 +1,15 @@
+.logIn-logOut {
+  width: 25rem;
+  text-align: center;
+  float: right;
+}
+
+.logBtn {
+    float: right;
+  background-color: $login-signup !important;
+  color: black !important;
+  border: none;
+  &:hover {
+    background-color: $primary-orange !important;
+  }
+}
