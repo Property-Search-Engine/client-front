@@ -1,14 +1,20 @@
 .navHeader {
-  overflow: hidden;
-  background-color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  border-bottom: 1px solid $input-borders;
-  //display: flex;
+  width: 100%!important;
+    display: flex!important;
+    margin: 10px auto!important;
 }
 
 .navHeader a {
+      overflow: hidden;
+    background-color: white;
+    top: 0;
+    display: -webkit-box;
+    margin: 10px auto;
+    text-align: center;
+    width: 29rem;
+    background: antiquewhite;
+}
+  /*
   float: left;
   display: block;
   color: #f2f2f2;
@@ -16,17 +22,27 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  
+  overflow: hidden;
+  background-color: white;
+  top: 0;
+  display: -webkit-box;
+  margin: 10px;
+  text-align: center;
+  width: 28.7rem;
+  background: antiquewhite;
 }
-
+*/
 .navHeader a:hover {
   background: #ddd;
   color: black;
 }
-.searchIcon {
-  width: 40px;
-  padding-bottom: 2px;
-  margin-left: 50px;
-}
+
 .menuHamburger {
   margin: 10px;
+}
+
+.searchIcon {
+  width: 40px;
+  //margin: 10px 50px 10px 50px;
 }

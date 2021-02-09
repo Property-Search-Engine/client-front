@@ -3,12 +3,14 @@ import { Button } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 
 export default function SignInSignUp() {
-  return (
-    <>
-      <Button className="logIn-logOut">
+  return  (
+    <div className="logIn-logOut ">
+ <Button className="logBtn">
         LogIn/SignOut
-        {/* Links? */}
+        {/*<div className="h-comp"> Links? </div>*/}
       </Button>
-    </>
+    </div>
+     
+    
   );
 }
