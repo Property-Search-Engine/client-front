@@ -1,0 +1,29 @@
+@import "../../../styles/main.scss";
+
+.detailsContainer {
+  p {
+    margin-bottom: 0;
+  }
+
+  .details {
+    padding-left: 10px;
+  }
+
+  p:nth-child(2) {
+    margin-bottom: 1rem;
+  }
+
+  .address {
+    color: $dark-text-properties;
+    font-weight: bold;
+  }
+
+  .price {
+    color: $primary-blue;
+  }
+
+  .icon {
+    width: 10%;
+    padding-right: 15px;
+  }
+}

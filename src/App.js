@@ -1,18 +1,17 @@
 import { Switch, Route } from "react-router-dom"; 
-import './App.css';
+// import './App.css';
 import React from "react"; 
 import ROUTES from "./utils/routes"; 
-import ImageCarousel from "./components/common/ImageCarousel/ImageCarousel";
-import { propertyEx } from "./utils/mockOfProperties";
+import Property from "./components/common/SinglePropertyDetails/Property/Property";
 
 function App() {
-
-  const property = propertyEx; 
 
   return (
     <Switch>
       <Route path={ROUTES.MAIN}>
-        <div className="app"><ImageCarousel  property={property}/></div>
+        <div className="app">
+          <Property/>
+        </div>
       </Route>
     </Switch>
   )
