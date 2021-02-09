@@ -2,8 +2,11 @@
 @import "./partials/fonts";
 @import "./partials/breakpoints";
 @import "./partials/mixings";
-@import "./../components/common/ImageCarousel/ImageCarousel.scss";
 @import "~bootstrap/scss/bootstrap";
+
+* {
+  font-family: $main-font;
+}
 
 .app {
   max-width: 480px;
