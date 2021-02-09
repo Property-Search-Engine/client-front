@@ -1,9 +1,8 @@
 import React from "react";
-import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
 import { Accordion, Card, Button, Image } from "react-bootstrap";
+import "./Menu.scss"; 
 
 export default function Menu() {
-  //const decoratedOnClick = useAccordionToggle(eventKey, onClick);
   return (
     <Accordion defaultActiveKey="0">
       <Accordion.Toggle
