@@ -2,25 +2,25 @@
   width: 45px;
 }
 
-.acordion {
-  float: left !important;
-}
-.cardBody {
-  margin-top: 45px;
-}
+// .acordion {
+//   float: left !important;
+// }
+// .cardBody {
+//   margin-top: 45px;
+// }
 
 .toggleMenu {
   display: flex;
-  width: 20rem;
+  width: 27rem;
   margin: auto;
   text-align: center;
 
   span {
     display: flex !important;
-  //  margin: 20px auto;
     margin: 0px auto 0px 10px;
   }
 }
-.filterIcon, .filterIcon{
+.filterIcon,
+.filterIcon {
   width: 20px;
 }

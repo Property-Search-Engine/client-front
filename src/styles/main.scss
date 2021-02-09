@@ -3,9 +3,6 @@
 @import "./partials/breakpoints";
 @import "./partials/mixings";
 @import "~bootstrap/scss/bootstrap";
-@import "../components/common/HeaderComponent/HeaderComponent.scss";
-@import "../components/common/Menu/Menu.scss";
-@import "../components/common/SignIn-signUp/SignIn-signUp.scss";
 
 * {
   font-family: $main-font;
@@ -19,7 +16,3 @@
   padding: 10px;
   overflow-y: scroll;
 }
-
-
-
-
