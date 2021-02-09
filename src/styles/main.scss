@@ -1,3 +1,15 @@
 @import "./partials/colors";
 @import "./partials/fonts";
 @import "./partials/breakpoints";
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  font-family: $main-font;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid red;
+  height: 100vh;
+}
