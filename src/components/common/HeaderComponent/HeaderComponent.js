@@ -1,16 +1,15 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import SignInSignUp from "../SignIn-signUp/SignIn-signUp";
-import Menu from "../Menu/Menu";
-
+import "../HeaderComponent/HeaderComponent.scss";
+//import Menu from "../Menu/Menu";
+import MiniDrawer from "../Drawer/Drawer"
 export default function HeaderComponent() {
   return (
     <div className="navHeader">
+      {/*
+      <Image className="searchIcon" src="/assets/icons/search.svg"></Image>
       <Menu />
-      {/*<Image className="searchIcon" src="/assets/icons/search.svg"></Image>*/}
-
-      <SignInSignUp />
+      */}
+      <MiniDrawer />
     </div>
   );
 }

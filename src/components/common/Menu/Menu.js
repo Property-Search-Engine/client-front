@@ -1,6 +1,8 @@
 import React from "react";
+import "../Menu/Menu.scss";
 import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
 import { Accordion, Card, Button, Image } from "react-bootstrap";
+import Filters from "../Filters/Filters";
 
 export default function Menu() {
   //const decoratedOnClick = useAccordionToggle(eventKey, onClick);
@@ -20,10 +22,10 @@ export default function Menu() {
           <hr></hr>
 
           <div className="toggleMenu">
-            <span as={Button}>
-              <img src="./assets/icons/filters.svg" className="filterIcon" />
-              Filtes
+            <span>
+              <Filters />
             </span>
+
             <span>
               <img src="./assets/icons/map.svg" className="filterIcon" />
               Maps

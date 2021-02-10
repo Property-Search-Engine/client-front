@@ -1,12 +1,13 @@
 import React from "react";
+import "../SignIn-signUp/SignIn-signUp.scss";
 import { Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
+
 
 export default function SignInSignUp() {
   return  (
     <div className="logIn-logOut ">
  <Button className="logBtn">
-        LogIn/SignOut
+        LogIn/SignUp
         {/*<div className="h-comp"> Links? </div>*/}
       </Button>
     </div>

@@ -1,0 +1,23 @@
+.btnCommonStyles {
+    width: auto;
+  }
+  .btn-outline-primary {
+    border-color: rgb(31, 151, 231) !important;
+    color: black;
+    font-size: 14px !important;
+    margin: 5px;
+    padding: 5px !important;
+  
+    &:hover, &:focus {
+      border-color: rgb(31, 151, 231) !important;
+      background-color: rgb(31, 151, 231);
+      color: black;
+    }
+   
+    
+  }
+  
+  
+  
+  
+  

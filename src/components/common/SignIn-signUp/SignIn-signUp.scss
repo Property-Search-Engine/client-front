@@ -6,10 +6,10 @@
 
 .logBtn {
     float: right;
-  background-color: $login-signup !important;
+  background-color: rgba(255, 229, 76, 1) !important;
   color: black !important;
   border: none;
   &:hover {
-    background-color: $primary-orange !important;
+    background-color: rgba(239, 153, 84, 1) !important;
   }
 }
