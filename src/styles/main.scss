@@ -1,6 +1,7 @@
 @import "./partials/colors";
 @import "./partials/fonts";
 @import "./partials/breakpoints";
+@import "./partials/mixings";
 @import "~bootstrap/scss/bootstrap";
 
 * {
@@ -12,4 +13,7 @@
   margin: 0 auto;
   border: 1px solid red;
   height: 100vh;
+  padding: 10px;
+  overflow-y: scroll;
+
 }
