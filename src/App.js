@@ -1,19 +1,24 @@
 import { Switch, Route } from "react-router-dom"; 
 import React from "react"; 
 import ROUTES from "./utils/routes"; 
-import Property from "./components/common/Property/Property";
-import ReactDOM from "react-dom";
-import HeaderComponent from "./components/common/HeaderComponent/HeaderComponent";
+import Main from './components/pages/Main/Main'; 
+import PropertyDetails from './components/common/PropertyDetails/PropertyDetails';
+import HeaderComponent from './components/common/HeaderComponent/HeaderComponent'; 
 
 
 function App() {
 
   return (
     <Switch>
-      <Route path={ROUTES.MAIN}>
+      <Route path={ROUTES.PROPERTY} exact>
         <div className="app">
-          <HeaderComponent />
-          <Property/>
+          <PropertyDetails/>
+        </div>
+      </Route>
+      <Route path={ROUTES.MAIN} exact>
+        <div className="app">
+          <HeaderComponent/>
+          <Main/>
         </div>
       </Route>
     </Switch>
