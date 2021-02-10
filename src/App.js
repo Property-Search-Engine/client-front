@@ -4,7 +4,6 @@ import ROUTES from "./utils/routes";
 import Main from './components/pages/Main/Main'; 
 import PropertyDetails from './components/common/PropertyDetails/PropertyDetails';
 import HeaderComponent from './components/common/HeaderComponent/HeaderComponent'; 
-import "./App.css";
 import ReactDOM from "react-dom";
 import HomeOfficeToggle from "./components/common/HomeOfficeToggle/HomeOfficeToggle";
 import Property from "./components/common/Property/Property";
