@@ -1,0 +1,27 @@
+@import "../../../styles/main.scss";
+
+.propertyDetails {
+  margin-top: 20px;
+  height: auto;
+}
+
+.buttonContainer {
+  text-align: center;
+}
+
+button {
+  border: none;
+  background-color: $primary-orange;
+  width: 50%;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+img {
+  width: 30px;
+}
