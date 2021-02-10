@@ -1,16 +1,17 @@
 import React, { useState } from 'react'; 
 import Properties from '../../common/Properties/Properties'; 
-import HeaderComponent from '../../common/HeaderComponent/HeaderComponent'; 
 import PropertyDetails from '../../common/PropertyDetails/PropertyDetails';
+import  { propertyEx, propertyEx2, propertyEx3 } from '../../../utils/mockOfProperties'; 
 
 export default function Main() {
 
     const [main, setMain] = useState(true);
     const [singlePropertyId, setsinglePropertyId] = useState("");
+    const properties = [propertyEx, propertyEx2, propertyEx3]; 
 
     return (
         <div className="mainContainer">
-            {main ? <Properties setMain={setMain} setsinglePropertyId={setsinglePropertyId}/> : <PropertyDetails setMain={setMain} id={singlePropertyId}/>}
+            {main ? <Properties properties={properties} setMain={setMain} setsinglePropertyId={setsinglePropertyId}/> : <PropertyDetails setMain={setMain} id={singlePropertyId}/>}
         </div>
     )
 }

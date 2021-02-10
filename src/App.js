@@ -12,12 +12,12 @@ import Property from "./components/common/Property/Property";
 
 
 function App() {
+  
   const [toggled, setToggled] = React.useState(false);
   const handleClick = () => {
     setToggled((s) => !s);
   };
 
-function App() {
   return (
     <Switch>
       <Route path={ROUTES.PROPERTY} exact>
@@ -29,11 +29,7 @@ function App() {
         <div className="app">
           <HeaderComponent/>
           <Main/>
-          <HomeOfficeToggle toggled={toggled} onClick={handleClick} />
-          <HeaderComponent />
-          <Property/>
-
-        </div>
+         </div>
       </Route>
     </Switch>
   );

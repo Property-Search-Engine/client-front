@@ -8,9 +8,9 @@ export default function Properties(props) {
 
    
 
-    const { setsinglePropertyId, setMain } = props; 
+    const { setsinglePropertyId, setMain, properties } = props; 
 
-    const properties = [propertyEx, propertyEx2, propertyEx3]; 
+    // const properties = [propertyEx, propertyEx2, propertyEx3]; 
 
    
         return (
