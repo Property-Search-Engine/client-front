@@ -8,10 +8,10 @@ import "./App.css";
 import ReactDOM from "react-dom";
 import HomeOfficeToggle from "./components/common/HomeOfficeToggle/HomeOfficeToggle";
 import Property from "./components/common/Property/Property";
+import Search from './components/common/Search/Search';
 
 
-
-function App() {
+export default function App() {
   
   const [toggled, setToggled] = React.useState(false);
   const handleClick = () => {
@@ -28,6 +28,7 @@ function App() {
       <Route path={ROUTES.MAIN} exact>
         <div className="app">
           <HeaderComponent/>
+          <Search />
           <Main/>
          </div>
       </Route>
@@ -35,4 +36,3 @@ function App() {
   );
 }
 
-export default App;
