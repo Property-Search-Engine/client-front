@@ -16,8 +16,6 @@ export default function Main() {
 
   return (
     <div className="mainContainer">
-      <Bookings />
-      <BookingForm />
       {main ? (
         <Properties
           properties={properties}
