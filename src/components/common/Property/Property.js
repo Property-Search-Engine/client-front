@@ -8,7 +8,6 @@ export default function Property(props) {
 
     
     const { property, setsinglePropertyId, setMain, isProperties} = props; 
-    console.log(property); 
     const { price, bedRooms, bathRooms, surface, id} = property; 
 
 
