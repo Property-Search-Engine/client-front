@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Properties from "../../common/Properties/Properties";
 import PropertyDetails from "../../common/PropertyDetails/PropertyDetails";
 import Bookings from "../../common/Bookings/Bookings";
+import BookingForm from "../../common/BookingForm/BookingForm";
 import {
   propertyEx,
   propertyEx2,
@@ -16,6 +17,7 @@ export default function Main() {
   return (
     <div className="mainContainer">
       <Bookings />
+      <BookingForm />
       {main ? (
         <Properties
           properties={properties}
