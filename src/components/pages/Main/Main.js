@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Properties from "../../common/Properties/Properties";
 import PropertyDetails from "../../common/PropertyDetails/PropertyDetails";
-import Bookings from "../../common/Bookings/Bookings";
+// import Bookings from "../../common/Bookings/Bookings";
 import {
   propertyEx,
   propertyEx2,
@@ -15,7 +15,7 @@ export default function Main() {
 
   return (
     <div className="mainContainer">
-      <Bookings />
+      {/* <Bookings /> */}
       {main ? (
         <Properties
           properties={properties}
