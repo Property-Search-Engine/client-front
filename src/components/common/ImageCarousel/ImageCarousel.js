@@ -8,8 +8,8 @@ export default function ImageCarousel(props) {
 
     return (
         <Carousel className="carousel-slider">
-            {property.images.map((carouselItem) => (
-            <Carousel.Item className="carousel-image">
+            {property.images.map((carouselItem, i) => (
+            <Carousel.Item key={`carousel_${i}`}className="carousel-image">
                 <img
                 className="d-block w-100 carouselImg"
                 src={carouselItem}
