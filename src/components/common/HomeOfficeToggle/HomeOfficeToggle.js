@@ -2,7 +2,6 @@ import { React, useState } from "react";
 import "./HomeOfficeToggle.scss";
 
 export default function HomeOfficeToggle({ toggled, onClick }) {
-  const [toggle, setToggled] = useState(false);
   return (
     <>
       <div onClick={onClick} className={`toggle ${toggled ? "office" : ""}`}>
