@@ -11,11 +11,8 @@ import "./Login.scss";
 const Login = (props) => {
   
   const {login, userState} = props; 
-  
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [innerLoginError, setInnerLoginError] = useState(userState.loginError)
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -27,10 +24,6 @@ const Login = (props) => {
     if(email !== "" && password !== "") {
       login(email, password); 
     } 
-    
-    // else {
-    //   setInnerLoginError("You must enter a valid email and password")
-    // }
   }; 
 
 
