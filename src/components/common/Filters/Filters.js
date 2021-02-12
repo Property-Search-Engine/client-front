@@ -1,10 +1,10 @@
-import "../Filters/Filters.scss";
+import "./Filters.scss";
 import React, { useState } from "react";
 import { Modal, Nav, Image } from "react-bootstrap";
 import CheckInputs from "../Inputs/CheckInputs";
 import GroupButtons from "../GroupButtons/GroupButtons";
 import SelectInput from "../Inputs/SelectInput";
-import RangeSlider from "../RangeSlider/RangeSlider";
+import RangeSlider from "../Inputs/RangeSlider";
 
 export default function Filters() {
   const [show, setShow] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
-import "../Inputs/Inputs.scss";
+import "./Inputs.scss";
 
-import { toCamelCase } from "../../../utils/heplers";
+import { toCamelCase } from "../../../utils/helpers";
 
 export default function CheckInputs(props) {
   const {
