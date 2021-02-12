@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 export default function SignInSignUp() {
   return  (
     <div className="logIn-logOut">
-      <Button className="logBtn">
-          <Link to='/login' >LogIn/SignOut</Link>
-      </Button>
+      <Link to='/login'>
+        <Button className="logBtn">
+            LogIn/SignOut
+        </Button>
+      </Link>
     </div>
   );
 }
