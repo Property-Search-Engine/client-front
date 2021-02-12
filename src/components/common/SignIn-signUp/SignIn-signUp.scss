@@ -1,17 +1,14 @@
-@import "../../../styles/main.scss";
+@import "../../../styles/partials/colors.scss";
 
 .logIn-logOut {
   width: 25rem;
   text-align: center;
-  float: right;
 }
 
 .logBtn {
   float: right;
+  padding: 10px 0 !important;
   background-color: $login-signup !important;
   color: black !important;
   border: none;
-  &:hover {
-    background-color: $primary-orange !important;
-  }
 }

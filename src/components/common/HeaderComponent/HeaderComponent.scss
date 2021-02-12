@@ -6,13 +6,13 @@
 
 .navHeader a {
   overflow: hidden;
-  background-color: white;
-  top: 0;
-  display: -webkit-box;
-  margin: 10px auto;
-  text-align: center;
-  width: 29rem;
-  background: antiquewhite;
+  // background-color: white;
+  // top: 0;
+  // display: -webkit-box;
+  text-align: center !important;
+  text-decoration: none;
+  width: 100%;
+  // background: antiquewhite;
 }
 
 .navHeader a:hover {
