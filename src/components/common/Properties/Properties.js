@@ -28,16 +28,15 @@ function Properties(props) {
     }
     
     const mapStateToProps = state => {
-    return {
-        propertiesData: state.propertiesState,
-
+        return {
+            propertiesData: state.propertiesState
+        }
     }
-}
 
-const mapDispathToProps = dispatch => {
-    return {
-        fetchProperties: () => dispatch(fetchProperties())
+    const mapDispathToProps = dispatch => {
+        return {
+            fetchProperties: () => dispatch(fetchProperties())
+        }
     }
-}
 
 export default connect(mapStateToProps, mapDispathToProps)(Properties)
