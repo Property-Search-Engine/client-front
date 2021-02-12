@@ -2,15 +2,16 @@ import React, { useState, useRef } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { Button, Form, Card } from "react-bootstrap";
 import ROUTES from "../../../utils/routes";
-import "./Login.scss";
+import "./Signup.scss";
 
-const Login = () => {
+const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const repeatPasswordRef = useRef();
 
   return (
     <>
@@ -23,7 +24,7 @@ const Login = () => {
           </div>
           <Card>
             <Card.Body>
-              <h2 className="text-center mb-4">Log In</h2>
+              <h2 className="text-center mb-4">Sign up</h2>
               <Form>
                 <Form.Group id="email">
                   <Form.Label>Email</Form.Label>
@@ -33,14 +34,22 @@ const Login = () => {
                   <Form.Label>Password</Form.Label>
                   <Form.Control type="password" ref={passwordRef} required />
                 </Form.Group>
-                <Button className="w-100 login" type="submit">
-                  Log In
+                <Form.Group id="passwordConfirm">
+                  <Form.Label>Repeat Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    ref={repeatPasswordRef}
+                    required
+                  />
+                </Form.Group>
+                <Button className="w-100 signup" type="submit">
+                  Sign Up
                 </Button>
               </Form>
             </Card.Body>
           </Card>
           <div className="w-100 text-center mt-2">
-            Not registered yet? <Link to={ROUTES.SIGNUP}>Sign up</Link>
+            Already have an account? <Link to={ROUTES.LOGIN}>Login</Link>
           </div>
         </div>
       </div>
@@ -48,4 +57,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
