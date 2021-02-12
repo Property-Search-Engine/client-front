@@ -1,0 +1,46 @@
+.filterBtn {
+  background: none !important;
+  border: none;
+}
+
+.modalFilter {
+  background-color: white;
+}
+
+.modal-dialog,
+.modal-content {
+  border: none;
+}
+.closeButton {
+  line-height: 40px !important;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  float: left;
+  display: flex;
+}
+
+.modal-header .close {
+  /* padding: 1rem 1rem; */
+  /* margin: -1rem -1rem -1rem auto; */
+  float: left !important;
+  display: contents !important;
+}
+
+.typeHome {
+  margin: 10px;
+}
+.filtersColumn {
+  padding: 15px;
+}
+
+.s-filters {
+  margin: auto;
+  .submitFilters {
+    width: 10rem;
+    height: 2.5rem;
+    background: rgba(239, 153, 84, 1);
+    border-radius: 25px;
+    border: none;
+  }
+}
