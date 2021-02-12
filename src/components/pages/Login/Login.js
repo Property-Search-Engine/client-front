@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, useHistory } from "react-router-dom";
 import { Button, Form, Card } from "react-bootstrap";
 import ROUTES from "../../../utils/routes";
 
@@ -10,6 +10,7 @@ import "./Login.scss";
 
 const Login = (props) => {
   
+  const history = useHistory(); 
   const {login, userState} = props; 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +18,10 @@ const Login = (props) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
+
+  if (userState.currentUser.token !== null && !userState.loginError) {
+    history.push(ROUTES.MAIN)
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -73,10 +78,10 @@ const mapStateToProps = state => ({
 }); 
 
 
-  const mapDispathToProps = dispatch => {
-    return {
-      login: (email, password) => dispatch(login(email, password))
-    }
+const mapDispathToProps = dispatch => {
+  return {
+    login: (email, password) => dispatch(login(email, password))
   }
+}
 
 export default connect(mapStateToProps, mapDispathToProps)(Login);
