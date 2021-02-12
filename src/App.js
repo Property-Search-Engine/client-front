@@ -7,7 +7,7 @@ import HeaderComponent from './components/common/HeaderComponent/HeaderComponent
 import ReactDOM from "react-dom";
 import HomeOfficeToggle from "./components/common/HomeOfficeToggle/HomeOfficeToggle";
 import Property from "./components/common/Property/Property";
-import Login from "./components/common/Login/Login";
+import Login from "./components/pages/Login/Login";
 import Search from './components/common/Search/Search';
 
 
@@ -21,13 +21,13 @@ export default function App() {
 
   return (
     <Switch>
-      <Route path={ROUTES.PROPERTY} exact>
+      <Route path={ROUTES.LOGIN} exact>
         <div className="app">
           {/* <HomeOfficeToggle toggled={toggled} onClick={handleClick} />
           <HeaderComponent />
           <Property /> */}
           <Login />
-          <PropertyDetails/>
+          {/* <PropertyDetails/> */}
         </div>
       </Route>
       <Route path={ROUTES.MAIN} exact>

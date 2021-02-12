@@ -1,6 +1,6 @@
 const ROUTES = {
     MAIN: "/", 
-    PROPERTY: "/property"
+    LOGIN: "/login"
 }; 
 
 export default ROUTES; 
