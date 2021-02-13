@@ -30,6 +30,8 @@ const UserReducer = (state = UserInitialState, action) => {
         ...state,
         isLoggingIn: true,
         loginError: null,
+        isAuthenticated: true,
+        isSignOut: false,
         currentUser: {
           firstname: action.payload.firstname,
           lastname: action.payload.lastname,
