@@ -9,24 +9,17 @@ import {
   propertyEx2,
   propertyEx3,
 } from "../../../utils/mockOfProperties";
+import Search from "../../common/Search/Search";
+import HeaderComponent from "../../common/HeaderComponent/HeaderComponent";
 
 export default function Main() {
-  const [main, setMain] = useState(true);
-  const [singlePropertyId, setsinglePropertyId] = useState("");
   const properties = [propertyEx, propertyEx2, propertyEx3];
 
   return (
     <div className="mainContainer">
-      {/* <Bookings /> */}
-      {main ? (
-        <Properties
-          properties={properties}
-          setMain={setMain}
-          setsinglePropertyId={setsinglePropertyId}
-        />
-      ) : (
-        <PropertyDetails setMain={setMain} id={singlePropertyId} />
-      )}
+      <HeaderComponent />
+      <Search />
+      <Properties properties={properties} />
     </div>
   );
 }
