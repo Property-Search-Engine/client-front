@@ -14,11 +14,14 @@ function Properties(props) {
     fetchProperties();
   }, []);
 
-  const { setsinglePropertyId, fetchProperties, propertiesData } = props;
-  const properties = [propertyEx, propertyEx2, propertyEx3];
+  const { fetchProperties, propertiesData } = props;
   // if (propertiesData.loading) return <p>Loading</p>
   // if(propertiesData.error) return <p>{propertiesData.error}</p>
   // return (<>{propertiesData.properties.map(property => <p>{property.name}</p>)}</>)
+  const { properties } = propertiesData;
+  if (properties === null) {
+    fetchProperties();
+  }
   if (propertiesData.loading)
     return <div className="w-100 text-center">Loading...</div>;
 
