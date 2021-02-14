@@ -48,3 +48,14 @@ export function camelCaseStringToCapitalizeString(str) {
   const capitaliseString = capitalise(str);
   return capitaliseString.replace(/([A-Z])/g, " $1");
 }
+
+export function trimFilters(filters) {
+  const trimmedFilters = {};
+  Object.entries(filters).forEach(([key, value]) => {
+    if (!filters[key] || filters[key] === "null" || filters[key].length < 1)
+      return;
+
+    trimmedFilters[key] = value;
+  });
+  return trimmedFilters;
+}

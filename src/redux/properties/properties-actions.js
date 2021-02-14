@@ -1,4 +1,5 @@
 import { finalEndpoints } from "../../utils/endpoints";
+import { trimFilters } from "../../utils/helpers";
 import {
   FETCH_PROPERTIES_REQUEST,
   FETCH_PROPERTIES_SUCCESS,
@@ -30,7 +31,7 @@ export const fetchProperties = (filters, isSearchbar = false) => {
           )
         );
       } else {
-        dispatch(fetchPropertiesSuccess(list.data.data));
+        dispatch(fetchPropertiesSuccess(list.data));
       }
     } catch (error) {
       dispatch(fetchPropertiesFailure(error.message));
@@ -58,16 +59,6 @@ const fetchPropertiesFailure = (error) => {
   };
 };
 
-function trimFilters(filters) {
-  const trimmedFilters = {};
-  Object.entries(filters).forEach(([key, value]) => {
-    if (!filters[key] || filters[key] === "null" || filters[key].length < 1)
-      return;
-
-    trimmedFilters[key] = value;
-  });
-  return trimmedFilters;
-}
 function filtersToQueryParamsFormatter(filters) {
   return Object.entries(filters)
     .map(([key, value]) => {

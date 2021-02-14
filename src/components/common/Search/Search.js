@@ -37,8 +37,7 @@ class Search extends React.Component {
     this.props.fetchProperties(this.props.propertiesData.filters, {
       city: value,
     });
-    console.log(this.props);
-    this.props.history.push("results/" + value);
+    if (value) this.props.history.push("results/" + value);
   }, 1000);
 
   render() {
@@ -61,7 +60,7 @@ class Search extends React.Component {
         </div>
 
         <p className="results">
-          <span className="num">{this.state.results} </span> in{" "}
+          <span className="num">{this.state.results} </span>
           {this.state.location}
         </p>
       </div>
