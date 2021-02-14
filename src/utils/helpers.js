@@ -51,6 +51,13 @@ export function camelCaseStringToCapitalizeString(str) {
   return capitaliseString.replace(/([A-Z])/g, " $1");
 }
 
+export const authHeader = (currentUserToken) => {
+  const header = new Headers();
+  header.append("Authorization", "Bearer " + currentUserToken);
+  header.append("Content-Type", "application/json");
+  return header;
+};
+
 export function trimFilters(filters) {
   const trimmedFilters = {};
   Object.entries(filters).forEach(([key, value]) => {
