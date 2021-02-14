@@ -1,6 +1,18 @@
+@import '../../../styles/main.scss'
+.Bookings
+  overflow-y: auto
+
 .booking, .titles
   display: grid
   grid-template-columns: 1fr 2fr 1fr
 
 .titles
   font-weight: bold
+  margin-top: 3rem
+
+.pending
+  color: $primary-orange
+.rejected
+  color: rgb(148, 34, 24)
+.accepted
+  color: rgb(24, 134, 29)

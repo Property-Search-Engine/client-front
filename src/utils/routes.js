@@ -5,7 +5,8 @@ const ROUTES = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   DETAIL: "/details/:id",
-  BOOKINGS: "/bookings/:id"
+  BOOKINGS: "/bookings/:id",
+  MY_BOOKINGS: "/my-bookings",
 };
 
 export default ROUTES;
