@@ -44,7 +44,7 @@ export const fetchProperties = (filters) => {
           )
         );
       } else {
-        dispatch(fetchPropertiesSuccess(list.data.data));
+        dispatch(fetchPropertiesSuccess(list.data));
       }
     } catch (error) {
       dispatch(fetchPropertiesFailure(error.message));
