@@ -1,4 +1,5 @@
 import React from "react";
+import HeaderComponent from "../HeaderComponent/HeaderComponent";
 
 import "./Bookings.sass";
 
@@ -29,15 +30,16 @@ export default class Bookings extends React.Component {
 
   render() {
     return (
-      <div className="Bookings">
+      <div className="app Bookings">
+        <HeaderComponent text={"Your bookings"} />
         <div className="titles">
           <p>#</p>
           <p>PROPERTY</p>
           <p>STATUS</p>
         </div>
-        {this.state.bookings.map((booking) => {
+        {this.state.bookings.map((booking, i) => {
           return (
-            <div className="booking">
+            <div key={"booking-" + i} className="booking">
               <p>{booking.id}</p>
               <p>{booking.address}</p>
               <p>{booking.status}</p>

@@ -1,10 +1,9 @@
 import React from "react";
 import SignInSignUp from "../SignIn-signUp/SignIn-signUp";
-import Menu from "../Menu/Menu";
 import "./HeaderComponent.scss";
 import { useHistory } from "react-router-dom";
-import { Link } from "@material-ui/core";
 import ROUTES from "../../../utils/routes";
+import DrawerMenu from "../Drawer/Drawer";
 
 export default function HeaderComponent(props) {
   const { main, text } = props;
@@ -20,12 +19,17 @@ export default function HeaderComponent(props) {
     <div className="navHeader">
       {main ? (
         <>
-          <Menu />
+          <DrawerMenu />
           <SignInSignUp />
         </>
       ) : (
         <div className="d-flex w-100">
-          <img onClick={handleClick} src="/assets/icons/left-arrow.svg"></img>
+          <img
+            alt="Go back"
+            onClick={handleClick}
+            src="/assets/icons/left-arrow.svg"
+            className="mr-4"
+          ></img>
           <span className="w-75">{text}</span>
           <span className="w-25 cursor-pointer" onClick={handleHomeClick}>
             Home

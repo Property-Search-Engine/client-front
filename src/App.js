@@ -7,7 +7,7 @@ import Signup from "./components/pages/Signup/Signup";
 import PropertyDetails from "./components/common/PropertyDetails/PropertyDetails";
 import Results from "./components/pages/Results/Results";
 import BookingForm from "./components/common/BookingForm/BookingForm";
-
+import Bookings from "./components/common/Bookings/Bookings";
 
 export default function App() {
   return (
@@ -33,6 +33,9 @@ export default function App() {
       <Route path={ROUTES.RESULTS} component={Results} exact />
       <Route path={ROUTES.BOOKINGS} exact>
         <BookingForm />
+      </Route>
+      <Route path={ROUTES.MY_BOOKINGS} exact>
+        <Bookings />
       </Route>
     </Switch>
   );
