@@ -1,7 +1,7 @@
 const ROUTES = {
   MAIN: "/",
   TEST: "/test",
-  RESULTS: "/results",
+  RESULTS: "/results/:city",
   LOGIN: "/login",
   SIGNUP: "/signup",
   DETAIL: "/details/:id",

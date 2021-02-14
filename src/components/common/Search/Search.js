@@ -1,7 +1,9 @@
 import { debounce } from "@material-ui/core";
 import React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { fetchProperties } from "../../../redux/properties/properties-actions";
+import ROUTES from "../../../utils/routes";
 
 import "./Search.sass";
 
@@ -11,8 +13,10 @@ class Search extends React.Component {
 
     this.state = {
       query: "",
-      results: "47",
-      location: "Vancouver, CA",
+      results:
+        this.props.propertiesData.properties.length > 0 &&
+        this.props.propertiesData.properties.length * 50,
+      location: "Amazings homes waiting for you",
 
       fixtures: {
         placeholder: "Search...",
@@ -33,7 +37,9 @@ class Search extends React.Component {
     this.props.fetchProperties(this.props.propertiesData.filters, {
       city: value,
     });
-  }, 500);
+    console.log(this.props);
+    this.props.history.push("results/" + value);
+  }, 1000);
 
   render() {
     return (
@@ -55,7 +61,7 @@ class Search extends React.Component {
         </div>
 
         <p className="results">
-          <span className="num">{this.state.results} Results</span> in{" "}
+          <span className="num">{this.state.results} </span> in{" "}
           {this.state.location}
         </p>
       </div>
@@ -76,4 +82,4 @@ const mapDispathToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispathToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispathToProps)(Search));

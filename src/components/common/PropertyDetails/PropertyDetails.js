@@ -18,7 +18,7 @@ function PropertyDetails(props) {
   function handleClick() {}
   return (
     <div className="app">
-      <HeaderComponent />
+      <HeaderComponent text={property.address.street} />
       <Property isProperties={false} property={property} />
       <div className="propertyDetails">
         <p>{property.description}</p>

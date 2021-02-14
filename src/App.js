@@ -5,6 +5,7 @@ import Main from "./components/pages/Main/Main";
 import Login from "./components/pages/Login/Login";
 import Signup from "./components/pages/Signup/Signup";
 import PropertyDetails from "./components/common/PropertyDetails/PropertyDetails";
+import Results from "./components/pages/Results/Results";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
       <Route path={ROUTES.DETAIL} exact>
         <PropertyDetails />
       </Route>
+      <Route path={ROUTES.RESULTS} component={Results} exact />
     </Switch>
   );
 }
