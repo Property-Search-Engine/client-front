@@ -4,5 +4,6 @@ const propertiesEndpoint = BASE_URL + "/properties";
 
 export const finalEndpoints = {
   login: userEndpoint + "/login",
-  fetchProperties: propertiesEndpoint + "",
+  register: userEndpoint + "/register",
+  fetchProperties: propertiesEndpoint,
 };

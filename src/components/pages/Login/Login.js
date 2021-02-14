@@ -19,8 +19,8 @@ const Login = (props) => {
   const passwordRef = useRef();
 
 
-  if (userState.currentUser.token !== null && !userState.loginError) {
-    history.push(ROUTES.MAIN)
+  if (userState.isAuthenticated) {
+    history.goBack()
   }
 
   function handleSubmit(e) {
