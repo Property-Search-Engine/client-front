@@ -20,7 +20,7 @@ const Login = (props) => {
 
 
   if (userState.currentUser.token !== null && !userState.loginError) {
-    history.push(ROUTES.MAIN)
+    history.goBack()
   }
 
   function handleSubmit(e) {

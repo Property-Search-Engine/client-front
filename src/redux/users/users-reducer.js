@@ -4,6 +4,10 @@ export const UserInitialState = {
     isLoggingIn: false,
     loginError: null,
     isAuthenticated: false,
+
+    isSigningUp: false,
+    signUpError: null,
+
     currentUser: {
         firstname: null,
         lastname: null,
@@ -44,6 +48,37 @@ const UserReducer = (state = UserInitialState, action) => {
                 isAuthenticated: false
             }
         }; 
+
+        case UserTypes.SIGNUP_REQUEST: {
+            return {
+                ...state, 
+                isSigningUp: true,
+                signUpError: null,
+            }
+        }
+
+        case UserTypes.SIGNUP_SUCCESS: {
+            return {
+                ...state,
+                isSigningUp: true, 
+                signUpError: null,
+                currentUser: {
+                    firstname: action.payload.firstname,
+                    lastname: action.payload.lastname,
+                    email: action.payload.email,
+                    token: null,
+                },
+            }
+
+        }
+
+        case UserTypes.SIGNUP_ERROR: {
+            return {
+                ...state,
+                isSigningUp: null,
+                signUpError: action.payload
+            }
+        }
             
         default: {
             return state; 
