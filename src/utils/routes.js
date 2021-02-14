@@ -1,7 +1,9 @@
 const ROUTES = {
-    MAIN: "/", 
-    LOGIN: "/login",
-    SIGNUP: "/signup"
-}; 
+  MAIN: "/",
+  RESULTS: "/results",
+  LOGIN: "/login",
+  SIGNUP: "/signup",
+  DETAIL: "/details/",
+};
 
-export default ROUTES; 
+export default ROUTES;
