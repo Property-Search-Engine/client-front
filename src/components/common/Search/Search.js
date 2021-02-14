@@ -1,19 +1,26 @@
-import React from 'react';
+import { debounce } from "@material-ui/core";
+import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { fetchProperties } from "../../../redux/properties/properties-actions";
+import ROUTES from "../../../utils/routes";
 
-import './Search.sass';
+import "./Search.sass";
 
-export default class Search extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      query: '',
-      results: '47',
-      location: 'Vancouver, CA',
+      query: "",
+      results:
+        this.props.propertiesData.properties.length > 0 &&
+        this.props.propertiesData.properties.length * 50,
+      location: "Amazings homes waiting for you",
 
       fixtures: {
-        placeholder: 'Search...',
-        icon: 'fas fa-search',
+        placeholder: "Search...",
+        icon: "fas fa-search",
       },
     };
 
@@ -21,13 +28,26 @@ export default class Search extends React.Component {
   }
 
   handleOnChange(e) {
-    this.setState({ query: e.target.value });
+    const { value } = e.target;
+    this.setState({ query: value });
+    this.handleSearch(value);
   }
+
+  handleSearch = debounce((value) => {
+    this.props.fetchProperties(this.props.propertiesData.filters, {
+      city: value,
+    });
+    if (value) this.props.history.push("results/" + value);
+  }, 1000);
 
   render() {
     return (
       <div className="search">
-        <img src="/assets/images/search_buildings.svg"></img>
+        <img
+          alt=""
+          aria-hidden={true}
+          src="/assets/images/search_buildings.svg"
+        ></img>
 
         <div>
           <input
@@ -40,10 +60,25 @@ export default class Search extends React.Component {
         </div>
 
         <p className="results">
-          <span className="num">{this.state.results} Results</span> in{' '}
+          <span className="num">{this.state.results} </span>
           {this.state.location}
         </p>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    propertiesData: state.propertiesState,
+  };
+};
+
+const mapDispathToProps = (dispatch) => {
+  return {
+    fetchProperties: (filters, isSearchbar) =>
+      dispatch(fetchProperties(filters, isSearchbar)),
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispathToProps)(Search));

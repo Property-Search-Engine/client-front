@@ -7,13 +7,15 @@ import { Link } from "@material-ui/core";
 import ROUTES from "../../../utils/routes";
 
 export default function HeaderComponent(props) {
-  const { main } = props;
+  const { main, text } = props;
   const history = useHistory();
 
   function handleClick() {
     history.goBack();
   }
-
+  function handleHomeClick(e) {
+    history.push(ROUTES.MAIN);
+  }
   return (
     <div className="navHeader">
       {main ? (
@@ -22,9 +24,12 @@ export default function HeaderComponent(props) {
           <SignInSignUp />
         </>
       ) : (
-        <div className="d-flex">
+        <div className="d-flex w-100">
           <img onClick={handleClick} src="/assets/icons/left-arrow.svg"></img>
-          <span> 47 vancouver </span> <Link to={ROUTES.MAIN}>Home</Link>
+          <span className="w-75">{text}</span>
+          <span className="w-25 cursor-pointer" onClick={handleHomeClick}>
+            Home
+          </span>
         </div>
       )}
     </div>

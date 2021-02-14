@@ -13,13 +13,11 @@ import Search from "../../common/Search/Search";
 import HeaderComponent from "../../common/HeaderComponent/HeaderComponent";
 
 export default function Main() {
-  const properties = [propertyEx, propertyEx2, propertyEx3];
-
   return (
     <div className="mainContainer">
       <HeaderComponent main />
       <Search />
-      <Properties properties={properties} />
+      <Properties />
     </div>
   );
 }

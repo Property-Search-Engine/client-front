@@ -20,23 +20,28 @@ const initialState = {
     condition: [],
     range: { max: 10000000, min: 0 },
   },
+  firstCall: true,
 };
 
 const PropertiesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_PROPERTIES_REQUEST:
+      const firstCall = state.firstCall && false;
       return {
         ...state,
+        firstCall: firstCall,
         loading: true,
       };
     case FETCH_PROPERTIES_SUCCESS:
       return {
+        ...state,
         loading: false,
         properties: action.payload,
         error: "",
       };
     case FETCH_PROPERTIES_FAILURE:
       return {
+        ...state,
         loading: false,
         properties: [],
         error: action.payload,

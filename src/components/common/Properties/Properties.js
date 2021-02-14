@@ -10,17 +10,15 @@ import { connect } from "react-redux";
 import { fetchProperties } from "../../../redux/properties/properties-actions";
 
 function Properties(props) {
-  useEffect(() => {
-    fetchProperties();
-  }, []);
-
   const { fetchProperties, propertiesData } = props;
+
   // if (propertiesData.loading) return <p>Loading</p>
   // if(propertiesData.error) return <p>{propertiesData.error}</p>
   // return (<>{propertiesData.properties.map(property => <p>{property.name}</p>)}</>)
-  const { properties } = propertiesData;
-  if (properties === null) {
-    fetchProperties();
+  const { properties, firstCall, filters } = propertiesData;
+  if (firstCall) {
+    console.log(filters);
+    fetchProperties(filters);
   }
   if (propertiesData.loading)
     return <div className="w-100 text-center">Loading...</div>;
@@ -48,7 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispathToProps = (dispatch) => {
   return {
-    fetchProperties: () => dispatch(fetchProperties()),
+    fetchProperties: (filters) => dispatch(fetchProperties(filters)),
   };
 };
 
