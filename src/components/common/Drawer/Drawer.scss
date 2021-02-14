@@ -1,16 +1,13 @@
-.MuiToolbar-regular {
-  min-height: 56px;
-  background: white;
+@import '~antd/dist/antd.css';
+.ant-drawer-wrapper-body, .ant-drawer-header {
+    background:rgba(3, 35, 54, 1)!important;
 }
-
-.MuiIconButton-label {
-  color: white !important;
+.ant-drawer-content-wrapper {
+    margin-top: -66px!important;
+    height: 50vh;
+   
 }
-.makeStyles-drawerPaper-7 {
-  width: 240px;
-  background: rgba(3, 35, 54, 1) !important;
-  color: white !important;
-}
-.MuiSvgIcon-root {
-  color: black;
+.openDrawer {
+    background: none;
+    border: none;
 }
