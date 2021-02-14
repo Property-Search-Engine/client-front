@@ -3,6 +3,7 @@ import {
   FETCH_PROPERTIES_REQUEST,
   FETCH_PROPERTIES_SUCCESS,
   FETCH_PROPERTIES_FAILURE,
+  UPDATE_FILTERS,
 } from "./property-types";
 
 export const fetchPropertiesRequest = () => {
@@ -54,3 +55,13 @@ export const fetchProperties = (filters) => {
   const header = new Headers();
   header.append("Authorization", "Bearer " + token);
 } */
+
+//======================================
+//========== Update filters
+//======================================
+export const updatePropertiesFilters = (filterName, filterValue) => {
+  return {
+    type: UPDATE_FILTERS,
+    payload: { filterName, filterValue },
+  };
+};
