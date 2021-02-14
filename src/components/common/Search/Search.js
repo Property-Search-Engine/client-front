@@ -26,7 +26,6 @@ class Search extends React.Component {
   handleOnChange(e) {
     const { value } = e.target;
     this.setState({ query: value });
-    if (!value) return;
     this.handleSearch(value);
   }
 
