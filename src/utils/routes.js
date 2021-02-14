@@ -5,6 +5,7 @@ const ROUTES = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   DETAIL: "/details/:id",
+  BOOKINGS: "/bookings/:id"
 };
 
 export default ROUTES;
