@@ -3,10 +3,13 @@ import ImageCarousel from "../ImageCarousel/ImageCarousel";
 import Contact from "../Contact/Contact";
 import PropertyCharacteristics from "../SinglePropertyDetails/PropertyCharacteristics/PropertyCharacteristics";
 import "./Property.scss";
+import { useHistory } from "react-router-dom";
 
 export default function Property(props) {
+  const history = useHistory();
   const { property, isProperties } = props;
-  const { price, bedRooms, bathRooms, surface, id } = property;
+  console.log(property);
+  const { price, bedRooms, bathRooms, surface, _id } = property;
 
   const { number, street, city } = property.address;
 
@@ -19,16 +22,17 @@ export default function Property(props) {
     }
 
     if (isProperties) {
+      history.push(`/details/${_id}`);
     }
   };
 
   return (
-    <div className="propertyContainer" onClick={handleClick} id={property._id}>
+    <div className="propertyContainer" onClick={handleClick} id={_id}>
       <ImageCarousel property={property} />
       <div>
         <div
           className="d-flex flex-row justify-content-between detailsContainer"
-          id={id}
+          id={_id}
         >
           <div className="details">
             <p className="address">

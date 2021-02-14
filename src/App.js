@@ -24,7 +24,9 @@ export default function App() {
           <Main />
         </div>
       </Route>
-      <Route path={ROUTES.DETAIL} component={PropertyDetails} exact />
+      <Route path={ROUTES.DETAIL} exact>
+        <PropertyDetails />
+      </Route>
     </Switch>
   );
 }
