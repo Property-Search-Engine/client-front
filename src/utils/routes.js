@@ -4,7 +4,7 @@ const ROUTES = {
   RESULTS: "/results",
   LOGIN: "/login",
   SIGNUP: "/signup",
-  DETAIL: "/details/",
+  DETAIL: "/details/:id",
 };
 
 export default ROUTES;

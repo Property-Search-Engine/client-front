@@ -8,6 +8,7 @@ import {
 import { camelCaseStringToCapitalizeString } from "../../../utils/helpers";
 import "./PropertyDetails.scss";
 import { useParams } from "react-router-dom";
+import HeaderComponent from "../HeaderComponent/HeaderComponent";
 
 export default function PropertyDetails(props) {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export default function PropertyDetails(props) {
   function handleClick() {}
   return (
     <div className="app">
-      <img onClick={handleClick} src="/assets/icons/left-arrow.svg"></img>
+      <HeaderComponent />
       <Property isProperties={false} property={property} />
       <div className="propertyDetails">
         <p>{property.description}</p>

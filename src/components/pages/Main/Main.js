@@ -17,7 +17,7 @@ export default function Main() {
 
   return (
     <div className="mainContainer">
-      <HeaderComponent />
+      <HeaderComponent main />
       <Search />
       <Properties properties={properties} />
     </div>
