@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import {Link, useHistory} from 'react-router-dom'; 
 import Property from "../Property/Property";
 import {
   propertyEx,
@@ -10,12 +11,28 @@ import { camelCaseStringToCapitalizeString } from "../../../utils/helpers";
 import "./PropertyDetails.scss";
 import { useParams } from "react-router-dom";
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
+import ROUTES from '../../../utils/routes'; 
 
 function PropertyDetails(props) {
+
+  const history = useHistory();
+
   const { id } = useParams();
   const { properties } = props.propertiesData;
+  const { userState } = props; 
+  console.log(userState); 
   const property = properties.filter((property) => id === property._id)[0];
-  function handleClick() {}
+  console.log(property)
+  
+  function handleClick(e) {
+    e.preventDefault()
+    if(!userState.isAuthenticated) {
+      history.push("/login")
+    } else {
+      history.push(`/bookings/${id}`)
+    }
+  }
+
   return (
     <div className="app">
       <HeaderComponent text={property.address.street} />
@@ -42,7 +59,7 @@ function PropertyDetails(props) {
           )}
         </ul>
         <div className="buttonContainer">
-          <button>Book a visit</button>
+          <button onClick={handleClick}>Book a visit</button>
         </div>
       </div>
     </div>
@@ -51,6 +68,7 @@ function PropertyDetails(props) {
 const mapStateToProps = (state) => {
   return {
     propertiesData: state.propertiesState,
+    userState: state.userState
   };
 };
 
