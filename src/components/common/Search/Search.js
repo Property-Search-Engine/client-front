@@ -1,19 +1,22 @@
-import React from 'react';
+import { debounce } from "@material-ui/core";
+import React from "react";
+import { connect } from "react-redux";
+import { fetchProperties } from "../../../redux/properties/properties-actions";
 
-import './Search.sass';
+import "./Search.sass";
 
-export default class Search extends React.Component {
+class Search extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      query: '',
-      results: '47',
-      location: 'Vancouver, CA',
+      query: "",
+      results: "47",
+      location: "Vancouver, CA",
 
       fixtures: {
-        placeholder: 'Search...',
-        icon: 'fas fa-search',
+        placeholder: "Search...",
+        icon: "fas fa-search",
       },
     };
 
@@ -21,13 +24,26 @@ export default class Search extends React.Component {
   }
 
   handleOnChange(e) {
-    this.setState({ query: e.target.value });
+    const { value } = e.target;
+    this.setState({ query: value });
+    if (!value) return;
+    this.handleSearch(value);
   }
+
+  handleSearch = debounce((value) => {
+    this.props.fetchProperties(this.props.propertiesData.filters, {
+      city: value,
+    });
+  }, 500);
 
   render() {
     return (
       <div className="search">
-        <img src="/assets/images/search_buildings.svg"></img>
+        <img
+          alt=""
+          aria-hidden={true}
+          src="/assets/images/search_buildings.svg"
+        ></img>
 
         <div>
           <input
@@ -40,10 +56,25 @@ export default class Search extends React.Component {
         </div>
 
         <p className="results">
-          <span className="num">{this.state.results} Results</span> in{' '}
+          <span className="num">{this.state.results} Results</span> in{" "}
           {this.state.location}
         </p>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    propertiesData: state.propertiesState,
+  };
+};
+
+const mapDispathToProps = (dispatch) => {
+  return {
+    fetchProperties: (filters, isSearchbar) =>
+      dispatch(fetchProperties(filters, isSearchbar)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispathToProps)(Search);
