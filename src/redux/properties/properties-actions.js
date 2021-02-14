@@ -63,7 +63,6 @@ function filtersToQueryParamsFormatter(filters) {
   return Object.entries(filters)
     .map(([key, value]) => {
       const arr_base_string = key + "[]=";
-      console.log(key);
       switch (key) {
         case "filters":
         case "buildingUse":
@@ -123,11 +122,6 @@ function filtersToQueryParamsFormatter(filters) {
     })
     .join("&");
 }
-
-/* function authHeader(token) {
-  const header = new Headers();
-  header.append("Authorization", "Bearer " + token);
-} */
 
 //======================================
 //========== Update filters

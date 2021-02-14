@@ -7,6 +7,7 @@ export const finalEndpoints = {
   login: userEndpoint + "/login",
   register: userEndpoint + "/register",
   fetchProperties: propertiesEndpoint,
+  getPropertyDetail: propertiesEndpoint + "/", //* :id ID as param
   makeBooking: bookingsEnpoint,
   getBookings: bookingsEnpoint + "/all",
 };
