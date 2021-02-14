@@ -42,6 +42,19 @@ export const signUpError = message => ({
     payload: message
 })
 
+export const signoutRequest = () => ({
+    type: UserTypes.SIGNOUT_REQUEST,
+  });
+  
+  export const signoutError = (message) => ({
+    type: UserTypes.SIGNOUT_REQUEST,
+    payload: message,
+  });
+  
+  export const signoutSuccess = () => ({
+    type: UserTypes.SIGNOUT_SUCCESS,
+  });
+
 export function login(email, password) {
     return async function loginThunk(dispatch) {
         dispatch(loginRequest());  
@@ -55,6 +68,8 @@ export function login(email, password) {
         catch (error) {
             dispatch(loginError(error.message)); 
         }
+    }
+}
 
 async function gatherUserInfoByToken(token) {
   const myHeaders = new Headers();

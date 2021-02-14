@@ -19,7 +19,7 @@ const Login = (props) => {
   const passwordRef = useRef();
 
 
-  if (userState.currentUser.token !== null && !userState.loginError) {
+  if (userState.isAuthenticated) {
     history.goBack()
   }
 
