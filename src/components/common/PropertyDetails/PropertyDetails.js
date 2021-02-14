@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import Property from "../Property/Property";
 import {
   propertyEx,
@@ -10,9 +11,9 @@ import "./PropertyDetails.scss";
 import { useParams } from "react-router-dom";
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
 
-export default function PropertyDetails(props) {
+function PropertyDetails(props) {
   const { id } = useParams();
-  const properties = [propertyEx, propertyEx2, propertyEx3];
+  const { properties } = props.propertiesData;
   const property = properties.filter((property) => id === property._id)[0];
   function handleClick() {}
   return (
@@ -23,17 +24,22 @@ export default function PropertyDetails(props) {
         <p>{property.description}</p>
         <h4>Main Features</h4>
         <ul>
-          {property.filters.map((element) => (
-            <li>&#8594;{camelCaseStringToCapitalizeString(element)}</li>
-          ))}
-          <li>
-            &#8594;Condition:{" "}
-            {camelCaseStringToCapitalizeString(property.condition)}
-          </li>
-          <li>
-            &#8594;Equipment:{" "}
-            {camelCaseStringToCapitalizeString(property.equipment)}
-          </li>
+          {property.filters &&
+            property.filters.map((element) => (
+              <li>&#8594;{camelCaseStringToCapitalizeString(element)}</li>
+            ))}
+          {property.condition && (
+            <li>
+              &#8594;Condition:
+              {camelCaseStringToCapitalizeString(property.condition)}
+            </li>
+          )}
+          {property.equipment && (
+            <li>
+              &#8594;Equipment:
+              {camelCaseStringToCapitalizeString(property.equipment)}
+            </li>
+          )}
         </ul>
         <div className="buttonContainer">
           <button>Book a visit</button>
@@ -42,3 +48,10 @@ export default function PropertyDetails(props) {
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    propertiesData: state.propertiesState,
+  };
+};
+
+export default connect(mapStateToProps, null)(PropertyDetails);

@@ -7,7 +7,8 @@ import { useHistory } from "react-router-dom";
 
 export default function Property(props) {
   const history = useHistory();
-  const { property, setsinglePropertyId, setMain, isProperties } = props;
+  const { property, isProperties } = props;
+  console.log(property);
   const { price, bedRooms, bathRooms, surface, _id } = property;
 
   const { number, street, city } = property.address;
