@@ -1,0 +1,18 @@
+@import "../../../styles/main.scss";
+
+.background {
+  background-image: url("/assets/images/login_background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.user-img {
+  background-image: url("/assets/images/icon_casaMe.png");
+}
+
+.signup {
+  background-color: $primary-orange !important;
+}
+.signup:hover {
+  background-color: chocolate !important;
+}
