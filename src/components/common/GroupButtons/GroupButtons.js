@@ -5,7 +5,7 @@ import "../GroupButtons/GroupButtons.scss";
 export default function GroupButtons(props) {
   const { handleChange, clicked, buttons, filterKey } = props;
   const handleClick = (e) => {
-    console.log(e.target.value);
+    console.log(clicked);
     //@param -> clicked is an array comming from parent state [0]
     if (!clicked.some((click) => click === e.target.value)) {
       e.target.classList.add("btn-clicked");
@@ -20,13 +20,18 @@ export default function GroupButtons(props) {
   };
   return (
     <>
-      <div onClick={handleClick}>
+      <div className="buttonGroup" onClick={handleClick}>
         {Object.keys(buttons).map((button, i) => (
           <Button
             key={`button-group-${i}`}
             variant="outline-primary"
             value={button}
             onClick={handleClick}
+            className={
+              clicked.some((click) => click === button)
+                ? "mr-2 btn-clicked"
+                : "mr-2"
+            }
           >
             {buttons[button]}
           </Button>

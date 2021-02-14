@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Image } from "react-bootstrap";
 
-export default function SelectInput(props) {
+function SelectInput(props) {
   const { labelText, labelImgSrc, inputName, options, onChange, value } = props;
   const handleChange = (e) => onChange(inputName, e.target.value);
   return (
@@ -14,15 +14,8 @@ export default function SelectInput(props) {
           {labelText}
         </Form.Label>
       )}
-      <Form.Control
-        name={inputName}
-        onChange={handleChange}
-        value={value}
-        as="select"
-        custom
-      >
+      <Form.Control name={inputName} onChange={handleChange} as="select" custom>
         {Object.keys(options).map((opt, i) => {
-          console.log(opt, value);
           return (
             <option
               key={`select-${opt}-${i}`}
@@ -37,3 +30,5 @@ export default function SelectInput(props) {
     </Form.Group>
   );
 }
+
+export default SelectInput;

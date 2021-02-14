@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
-import "./Inputs.scss";
 
 import { toCamelCase } from "../../../utils/helpers";
+import "./RadioCheckInputs.scss";
 
-export default function CheckInputs(props) {
+function RadioInputs(props) {
   const {
     labelText,
     labelImgSrc,
     inputsName,
     options,
+    values,
     onChange,
-    //// values,
   } = props;
-  const handleChange = (e) => onChange(inputsName, toCamelCase(e.target.value));
 
-  const [checked, setChecked] = useState([]);
-  useEffect(() => {
-    onChange(inputsName, checked);
-  }, [checked]);
+  const handleChange = (e) =>
+    values.some((item) => item === e.target.value)
+      ? onChange(
+          inputsName,
+          values.filter((item) => item !== e.target.value)
+        )
+      : onChange(inputsName, [...values, e.target.value]);
 
   return (
-    <div className="filtersColumn">
+    <div>
       {labelText && (
         <label htmlFor={inputsName}>
           {labelImgSrc && (
@@ -37,9 +39,9 @@ export default function CheckInputs(props) {
               type="checkbox"
               name={inputsName}
               value={toCamelCase(o)}
-              /* defaultChecked={
-             //   values.some((value) => value === toCamelCase(o)) ? true : false
-              }*/
+              defaultChecked={
+                values.some((value) => value === toCamelCase(o)) ? true : false
+              }
             />
             <span className="checkmark"></span>
             <span>&nbsp; {o}</span>
@@ -49,3 +51,5 @@ export default function CheckInputs(props) {
     </div>
   );
 }
+
+export default RadioInputs;

@@ -1,17 +1,30 @@
+@import "../../../styles/main.scss";
 .btnCommonStyles {
   width: auto;
 }
-.btn-outline-primary {
-  border-color: rgb(31, 151, 231) !important;
-  color: black;
-  font-size: 14px !important;
-  margin: 5px;
-  padding: 5px !important;
-
+.btn-outline-secondary {
   &:hover,
   &:focus {
-    border-color: rgb(31, 151, 231) !important;
-    background-color: rgb(31, 151, 231);
-    color: black;
+    box-shadow: none !important;
+  }
+  &:hover {
+    color: white;
+  }
+}
+.btn-clicked {
+  border-color: $primary-blue !important;
+  background-color: $primary-blue !important;
+  color: white !important;
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  button {
+    width: 5rem;
   }
 }

@@ -1,36 +1,30 @@
 import "./Filters.scss";
+import "../Inputs/Inputs.scss";
 import React, { useState } from "react";
+
 import { Modal, Nav, Image } from "react-bootstrap";
 import CheckInputs from "../Inputs/CheckInputs";
 import GroupButtons from "../GroupButtons/GroupButtons";
 import SelectInput from "../Inputs/SelectInput";
 import RangeSlider from "../Inputs/RangeSlider";
 
-export default function Filters() {
-  const [show, setShow] = useState(false);
+import { connect } from "react-redux";
+import { updatePropertiesFilters } from "../../../redux/properties/properties-actions";
+import { svgPath } from "../../../utils/helpers";
 
+function Filters({ filters, setFilters }) {
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [open, setOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    type: [],
-    bedrooms: [],
-    bathrooms: [],
-    equipment: "null",
-    publication: "null",
-    filters: [],
-    condition: [],
-    range: "",
-  });
-
   function handleFilterChange(filterKey, filterValue) {
-    setFilters({ ...filters, [filterKey]: filterValue });
+    setFilters(filterKey, filterValue);
   }
   return (
     <>
       <button onClick={handleShow} className="filterBtn">
         <img src="./assets/icons/filters.svg" className="filterIcon" />
-        Filtes
+        Filters
       </button>
 
       <Modal
@@ -39,7 +33,7 @@ export default function Filters() {
         animation={false}
         className="modalFilter"
       >
-        <div className="modal-content">
+        <div className="modal-content px-3">
           <Modal.Header>
             <button onClick={handleClose} className="closeButton">
               x
@@ -50,18 +44,18 @@ export default function Filters() {
 
           {/* Type of Home ¦ CheckInputs */}
           <CheckInputs
-            className="typeHome"
-            options={["Flat/Department", "House", "Duplex", "Penthouse"]}
+            className="homeType"
+            options={["Flat/Apartment", "House", "Duplex", "Penthouse"]}
             labelText="Type of home"
-            inputsName="type"
+            inputsName="homeType"
             onChange={handleFilterChange}
-            ////values={type}
+            values={filters.homeType}
           />
           {/* Bedrooms ¦ GroupButtos */}
           <div className="filtersColumn">
             Bedrooms
             <Image
-              src="/assets/icons/bed.svg"
+              src={svgPath("bed")}
               width="15px"
               rounded
               className="form-icon-label"
@@ -69,8 +63,8 @@ export default function Filters() {
             <GroupButtons
               className="filters-btn"
               handleChange={handleFilterChange}
-              filterKey="bedrooms"
-              clicked={filters.bedrooms}
+              filterKey="bedRooms"
+              clicked={filters.bedRooms}
               buttons={{
                 0: "0 (Studio Flat)",
                 1: "1",
@@ -92,8 +86,8 @@ export default function Filters() {
             <div className="bedroomsCol">
               <GroupButtons
                 handleChange={handleFilterChange}
-                filterKey="bedrooms"
-                clicked={filters.bedrooms}
+                filterKey="bathRooms"
+                clicked={filters.bathRooms}
                 buttons={{
                   1: "1",
                   2: "2",
@@ -130,7 +124,7 @@ export default function Filters() {
           {/* Conditions ¦ RangeSlider */}
           <div className="filtersColumn">
             Price Range
-            <RangeSlider />
+            <RangeSlider setFilters={handleFilterChange} />
           </div>
           {/* Publication Date ¦ SelectInput - DateInput ?? */}
           <div className="filtersColumn">
@@ -163,7 +157,20 @@ export default function Filters() {
             onChange={handleFilterChange}
             values={filters.filters}
           />
+          <div className="filterColumns">
+            <SelectInput
+              options={{
+                Available: "Available",
+                Sold: "Sold",
+              }}
+              inputName="sold"
+              labelText="Sold Status"
+              onChange={handleFilterChange}
+              value={filters.sold}
+            />
+          </div>
         </div>
+
         <div className="s-filters">
           <button onClick={handleClose} className="submitFilters">
             Show Results
@@ -173,3 +180,20 @@ export default function Filters() {
     </>
   );
 }
+
+//Pass the properties state to be accessible by the component
+const mapStateToProps = (state) => {
+  return {
+    filters: state.propertiesState.filters,
+  };
+};
+
+//Pass the actions functions to be accessible by the component
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setFilters: (filterName, filterValue) =>
+      dispatch(updatePropertiesFilters(filterName, filterValue)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filters);

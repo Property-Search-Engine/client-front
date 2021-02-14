@@ -1,3 +1,4 @@
+@import "../../../styles/main.scss";
 .filterBtn {
   background: none !important;
   border: none;
@@ -31,7 +32,7 @@
   margin: 10px;
 }
 .filtersColumn {
-  padding: 15px;
+  padding: 5px 10px;
 }
 
 .s-filters {
