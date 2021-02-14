@@ -90,7 +90,7 @@ export function signUp ({firstname, lastname, email, password}) {
         // redirect: 'follow'
       };
 
-      fetch("http://localhost:5000/user/register", requestOptions)
+      fetch(finalEndpoints.register, requestOptions)
           .then(response => response.json())
           .then(result => {
               console.log(result)

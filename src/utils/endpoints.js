@@ -1,7 +1,7 @@
-const BASE_URL = "http://localhost:5000"; 
+const BASE_URL = "https://client-facing-server.herokuapp.com"; 
 const userEndpoint = BASE_URL + "/user"; 
 
 export const finalEndpoints = {
     login: userEndpoint + "/login",
-    register: userEndpoint + "register"
+    register: userEndpoint + "/register"
 }; 
