@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+
 import "../GroupButtons/GroupButtons.scss";
 
 export default function GroupButtons(props) {
   const { handleChange, clicked, buttons, filterKey } = props;
   const handleClick = (e) => {
-    console.log(clicked);
-    //@param -> clicked is an array comming from parent state [0]
+    
     if (!clicked.some((click) => click === e.target.value)) {
       e.target.classList.add("btn-clicked");
       handleChange(filterKey, [...clicked, e.target.value]);
@@ -15,9 +15,10 @@ export default function GroupButtons(props) {
       handleChange(
         filterKey,
         clicked.filter((item) => item !== e.target.value)
-      ); // [0,1,3] --> [0,3]
+      ); 
     }
   };
+  
   return (
     <>
       <div className="buttonGroup" onClick={handleClick}>

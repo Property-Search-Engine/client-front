@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
-import { Redirect, Link, useHistory } from "react-router-dom";
-import { Button, Form, Card } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
+import { connect } from 'react-redux'; 
+
+import {login} from '../../../redux/users/users-actions'; 
 import ROUTES from "../../../utils/routes";
 
-import { connect } from 'react-redux'; 
-import {login} from '../../../redux/users/users-actions'; 
+import { Button, Form, Card } from "react-bootstrap";
 
 import "./Login.scss";
 
@@ -18,7 +19,6 @@ const Login = (props) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-
   if (userState.isAuthenticated) {
     history.goBack()
   }
@@ -30,7 +30,6 @@ const Login = (props) => {
       login(email, password); 
     } 
   }; 
-
 
   return (
     <>
@@ -76,7 +75,6 @@ const Login = (props) => {
 const mapStateToProps = state => ({
   userState: state.userState
 }); 
-
 
 const mapDispathToProps = dispatch => {
   return {

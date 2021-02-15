@@ -1,11 +1,14 @@
 import React, { useState, useRef } from "react";
-import { Redirect, Link, useHistory } from "react-router-dom";
-import { Button, Form, Card } from "react-bootstrap";
-import ROUTES from "../../../utils/routes";
-import "./Signup.scss";
-
+import { Link, useHistory } from "react-router-dom";
 import { connect } from 'react-redux'; 
+
 import { signUp } from '../../../redux/users/users-actions'; 
+
+import { Button, Form, Card } from "react-bootstrap";
+
+import ROUTES from "../../../utils/routes";
+
+import "./Signup.scss";
 
 const Signup = (props) => {
 
@@ -18,14 +21,9 @@ const Signup = (props) => {
   const [password, setpassword] = useState("");
   const [confirmedPassword, setconfirmedPassword] = useState(""); 
 
-  // const emailRef = useRef();
-  // const passwordRef = useRef();
-  // const repeatPasswordRef = useRef();
-
   if (userState.currentUser.token !== null && !userState.loginError) {
     history.goBack()
   }
-
 
   function handleSubmit(e) {
     e.preventDefault() 

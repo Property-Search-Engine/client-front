@@ -1,9 +1,10 @@
-import { debounce } from "@material-ui/core";
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
+import { debounce } from "@material-ui/core";
+
 import { fetchProperties } from "../../../redux/properties/properties-actions";
-import ROUTES from "../../../utils/routes";
 
 import "./Search.sass";
 

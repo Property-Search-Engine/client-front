@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import ImageCarousel from "../ImageCarousel/ImageCarousel";
 import Contact from "../Contact/Contact";
 import PropertyCharacteristics from "../SinglePropertyDetails/PropertyCharacteristics/PropertyCharacteristics";
+
 import "./Property.scss";
-import { useHistory } from "react-router-dom";
+
 
 export default function Property(props) {
+
   const history = useHistory();
   const { property, isProperties } = props;
-  console.log(property);
   const { price, bedRooms, bathRooms, surface, _id } = property;
-
   const { number, street, city } = property.address;
-
+  
   const [heartGrey, setheartGrey] = useState(true);
 
   const handleClick = (e) => {

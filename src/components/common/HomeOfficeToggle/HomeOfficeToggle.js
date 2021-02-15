@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React } from "react";
+
 import "./HomeOfficeToggle.scss";
 
 export default function HomeOfficeToggle({ toggled, onClick }) {

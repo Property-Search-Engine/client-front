@@ -51,6 +51,13 @@ export function camelCaseStringToCapitalizeString(str) {
   return capitaliseString.replace(/([A-Z])/g, " $1");
 }
 
+export const authHeader = (currentUserToken) => {
+  const header = new Headers();
+  header.append("Authorization", "Bearer " + currentUserToken);
+  header.append("Content-Type", "application/json");
+  return header;
+};
+
 export function trimFilters(filters) {
   const trimmedFilters = {};
   Object.entries(filters).forEach(([key, value]) => {
@@ -60,29 +67,4 @@ export function trimFilters(filters) {
     trimmedFilters[key] = value;
   });
   return trimmedFilters;
-}
-export async function makeBooking(propertyId, contactInfo, endPoint) {
-  const token = await auth.currentUser.getIdToken();
-  console.log(token);
-
-  const myHeaders = new Headers();
-  myHeaders.append("Authorization", "Bearer " + token);
-  myHeaders.append("Content-Type", "application/json");
-  console.log(myHeaders.get("Authorization"));
-
-  var raw = JSON.stringify({ propertyId, contactInfo });
-  console.log(raw);
-
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-  };
-
-  console.log(requestOptions);
-
-  fetch(endPoint, requestOptions)
-    .then((response) => response.json())
-    .then((result) => console.log(result))
-    .catch((error) => console.log("error", error));
 }

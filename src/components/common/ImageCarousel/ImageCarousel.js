@@ -1,5 +1,7 @@
 import React from 'react'; 
+
 import { Carousel } from 'react-bootstrap'; 
+
 import "./ImageCarousel.scss"; 
 
 export default function ImageCarousel(props) {

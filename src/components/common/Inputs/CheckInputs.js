@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Image } from "react-bootstrap";
+import React from "react";
 
 import { toCamelCase } from "../../../utils/helpers";
+
+import { Image } from "react-bootstrap";
+
 import "./RadioCheckInputs.scss";
 
 function RadioInputs(props) {

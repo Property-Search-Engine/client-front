@@ -1,25 +1,20 @@
-import React, { useEffect } from "react";
-import Property from "../Property/Property";
-import {
-  propertyEx,
-  propertyEx2,
-  propertyEx3,
-} from "../../../utils/mockOfProperties";
-import "./Properties.scss";
+import React from "react";
 import { connect } from "react-redux";
+
 import { fetchProperties } from "../../../redux/properties/properties-actions";
+
+import Property from "../Property/Property";
+
+import "./Properties.scss";
 
 function Properties(props) {
   const { fetchProperties, propertiesData } = props;
-
-  // if (propertiesData.loading) return <p>Loading</p>
-  // if(propertiesData.error) return <p>{propertiesData.error}</p>
-  // return (<>{propertiesData.properties.map(property => <p>{property.name}</p>)}</>)
   const { properties, firstCall, filters } = propertiesData;
+
   if (firstCall) {
-    console.log(filters);
     fetchProperties(filters);
   }
+  
   if (propertiesData.loading)
     return <div className="w-100 text-center">Loading...</div>;
 
