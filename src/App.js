@@ -11,6 +11,7 @@ import Results from "./components/pages/Results/Results";
 import BookingForm from "./components/common/BookingForm/BookingForm";
 import Bookings from "./components/common/Bookings/Bookings";
 
+
 export default function App() {
   return (
     <Switch>

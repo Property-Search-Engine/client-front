@@ -28,17 +28,19 @@ export default function HeaderComponent(props) {
           <SignInSignUp />
         </>
       ) : (
-        <div className="d-flex w-100">
+        <div className="d-flex w-100 justify-content-between align-items-center">
           <img
             alt="Go back"
             onClick={handleClick}
             src="/assets/icons/left-arrow.svg"
             className="mr-4"
           ></img>
-          <span className="w-75">{text}</span>
-          <span className="w-25 cursor-pointer" onClick={handleHomeClick}>
-            Home
-          </span>
+          <div className="d-flex justify-content-around align-items-center w-75">
+            <span className="text-secondary">{text}</span>
+            <span role="button" className="homeClick" onClick={handleHomeClick}>
+              Home
+            </span>
+          </div>
         </div>
       )}
     </div>
