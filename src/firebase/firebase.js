@@ -16,7 +16,6 @@ if (!firebase.apps.length) {
 
   firebase.initializeApp(firebaseConfig);
 } else {
-  // if already initialized, use that one
   firebase.app();
 }
 

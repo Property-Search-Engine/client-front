@@ -1,9 +1,9 @@
-import "./RangeSlider.scss";
-
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Slider from "@material-ui/core/Slider";
+
+import "./RangeSlider.scss";
 
 const useStyles = makeStyles({
   root: {
@@ -16,6 +16,7 @@ function valuetext(value) {
 }
 
 export default function RangeSlider({ setFilters }) {
+  
   const classes = useStyles();
   const [value, setValue] = useState([0, 900000]);
   const handleChange = (event, [min, max]) => {

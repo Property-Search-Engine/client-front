@@ -1,13 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+
 import { auth } from "../../../firebase/firebase";
 import { finalEndpoints } from "../../../utils/endpoints";
 import ROUTES from "../../../utils/routes";
 import { authHeader } from "../../../utils/helpers";
+
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
 
 import "./Bookings.sass";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+
 
 class Bookings extends React.Component {
   constructor(props) {

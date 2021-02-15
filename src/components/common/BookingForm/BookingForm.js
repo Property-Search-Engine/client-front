@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { makeBooking } from "../../../utils/oneComponentFetchers";
 import { useParams, useHistory } from "react-router-dom";
-import { finalEndpoints } from "../../../utils/endpoints";
 import { connect } from "react-redux";
+
+import { finalEndpoints } from "../../../utils/endpoints";
+import { makeBooking } from "../../../utils/oneComponentFetchers";
 
 import "./BookingForm.sass";
 

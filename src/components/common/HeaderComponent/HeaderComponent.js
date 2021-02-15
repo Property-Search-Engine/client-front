@@ -1,9 +1,12 @@
 import React from "react";
-import SignInSignUp from "../SignIn-signUp/SignIn-signUp";
-import "./HeaderComponent.scss";
 import { useHistory } from "react-router-dom";
+
 import ROUTES from "../../../utils/routes";
+
 import DrawerMenu from "../Drawer/Drawer";
+import SignInSignUp from "../SignIn-signUp/SignIn-signUp";
+
+import "./HeaderComponent.scss";
 
 export default function HeaderComponent(props) {
   const { main, text } = props;
@@ -12,9 +15,11 @@ export default function HeaderComponent(props) {
   function handleClick() {
     history.goBack();
   }
+
   function handleHomeClick(e) {
     history.push(ROUTES.MAIN);
   }
+  
   return (
     <div className="navHeader">
       {main ? (

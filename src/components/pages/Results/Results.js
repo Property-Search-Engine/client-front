@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+
 import Filters from "../../common/Filters/Filters";
 import HeaderComponent from "../../common/HeaderComponent/HeaderComponent";
 import Properties from "../../common/Properties/Properties";
 
-export default function Results(props) {
+export default function Results() {
+
   const { city } = useParams();
   const [isOpenFiltersModal, setIsOpenFiltersModal] = useState(false);
   const handleFilterModal = (e) => {

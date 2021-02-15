@@ -1,6 +1,8 @@
 import React from 'react'; 
-import './PropertyCharacteristics.scss'; 
+
 import {Image} from 'react-bootstrap'; 
+
+import './PropertyCharacteristics.scss'; 
 
 export default function PropertyCharacteristics(props) {
 

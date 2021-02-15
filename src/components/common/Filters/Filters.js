@@ -1,19 +1,17 @@
-import "./Filters.scss";
-import "../Inputs/Inputs.scss";
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import { Modal, Nav, Image } from "react-bootstrap";
+import { Modal, Image } from "react-bootstrap";
+import { fetchProperties,updatePropertiesFilters } from "../../../redux/properties/properties-actions";
+import { svgPath, trimFilters } from "../../../utils/helpers";
+
 import CheckInputs from "../Inputs/CheckInputs";
 import GroupButtons from "../GroupButtons/GroupButtons";
 import SelectInput from "../Inputs/SelectInput";
 import RangeSlider from "../Inputs/RangeSlider";
 
-import { connect } from "react-redux";
-import {
-  fetchProperties,
-  updatePropertiesFilters,
-} from "../../../redux/properties/properties-actions";
-import { svgPath, trimFilters } from "../../../utils/helpers";
+import "./Filters.scss";
+import "../Inputs/Inputs.scss";
 
 function Filters(props) {
   const { filters, setFilters, show, handleShow } = props;
@@ -22,9 +20,11 @@ function Filters(props) {
     fetchProperties(filters);
     handleClose();
   };
+
   function handleFilterChange(filterKey, filterValue) {
     setFilters(filterKey, filterValue);
   }
+
   return (
     <Modal
       show={show}
@@ -42,7 +42,6 @@ function Filters(props) {
           </h4>
         </Modal.Header>
 
-        {/* Type of Home ¦ CheckInputs */}
         <CheckInputs
           className="homeType"
           options={["Flat/Apartment", "House", "Duplex", "Penthouse"]}
@@ -51,7 +50,7 @@ function Filters(props) {
           onChange={handleFilterChange}
           values={filters.homeType}
         />
-        {/* Bedrooms ¦ GroupButtos */}
+     
         <div className="filtersColumn">
           Bedrooms
           <Image
@@ -74,7 +73,7 @@ function Filters(props) {
             }}
           />
         </div>
-        {/* Bathroom ¦ GroupButton */}
+
         <div className="filtersColumn">
           Bathrooms
           <Image
@@ -96,7 +95,7 @@ function Filters(props) {
             />
           </div>
         </div>
-        {/* Select ¦ SelectInput */}
+
         <div className="filtersColumn">
           <SelectInput
             options={{
@@ -111,7 +110,6 @@ function Filters(props) {
             value={filters.equipment}
           />
         </div>
-        {/* Conditions ¦ CheckInput */}
 
         <CheckInputs
           options={["New home", "Need renovation", "Good Conditions"]}
@@ -121,12 +119,11 @@ function Filters(props) {
           values={filters.condition}
         />
 
-        {/* Conditions ¦ RangeSlider */}
         <div className="filtersColumn">
           Price Range
           <RangeSlider setFilters={handleFilterChange} />
         </div>
-        {/* Publication Date ¦ SelectInput - DateInput ?? */}
+
         <div className="filtersColumn">
           <SelectInput
             options={{
@@ -141,7 +138,6 @@ function Filters(props) {
             value={filters.publication}
           />
         </div>
-        {/* More Filters ¦ CheckInputs  */}
 
         <CheckInputs
           options={[
@@ -180,14 +176,12 @@ function Filters(props) {
   );
 }
 
-//Pass the properties state to be accessible by the component
 const mapStateToProps = (state) => {
   return {
     filters: state.propertiesState.filters,
   };
 };
 
-//Pass the actions functions to be accessible by the component
 const mapDispatchToProps = (dispatch) => {
   return {
     setFilters: (filterName, filterValue) =>

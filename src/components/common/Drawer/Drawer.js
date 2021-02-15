@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import ROUTES from "../../../utils/routes";
+
+import { Drawer } from "antd";
 
 import "./Drawer.scss";
-import { Drawer, Button } from "antd";
-import { Link } from "react-router-dom";
-import ROUTES from "../../../utils/routes";
 
 export default class DrawerMenu extends React.Component {
   state = { visible: false };

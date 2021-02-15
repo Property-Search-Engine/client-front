@@ -27,7 +27,6 @@ export const loginSuccess = ({ firstname, lastname, email, phone }, token) => ({
   },
 });
 
-
 export const signUpRequest = () => ({
     type: UserTypes.SIGNUP_REQUEST, 
 })

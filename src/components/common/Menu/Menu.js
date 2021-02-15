@@ -1,8 +1,11 @@
 import React from "react";
+
 import { Accordion, Card, Button, Image } from "react-bootstrap";
+
 import "./Menu.scss"; 
 
 export default function Menu() {
+  
   return (
     <Accordion defaultActiveKey="0">
       <Accordion.Toggle

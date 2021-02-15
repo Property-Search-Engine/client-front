@@ -1,9 +1,12 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import "./SignIn-signUp.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+
 import { signout } from "../../../redux/users/users-actions";
+
+import { Button } from "react-bootstrap";
+
+import "./SignIn-signUp.scss";
 
 function SignInSignUp(props) {
   const { userState, signout } = props;
