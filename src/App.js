@@ -8,7 +8,6 @@ import PropertyDetails from "./components/common/PropertyDetails/PropertyDetails
 import Results from "./components/pages/Results/Results";
 import BookingForm from "./components/common/BookingForm/BookingForm";
 
-
 export default function App() {
   return (
     <Switch>

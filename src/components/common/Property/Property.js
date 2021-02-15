@@ -27,7 +27,11 @@ export default function Property(props) {
   };
 
   return (
-    <div className="propertyContainer" onClick={handleClick} id={_id}>
+    <div
+      className="propertyContainer shadow p-3 mb-5 bg-white rounded"
+      onClick={handleClick}
+      id={_id}
+    >
       <ImageCarousel property={property} />
       <div>
         <div
