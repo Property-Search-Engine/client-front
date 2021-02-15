@@ -25,13 +25,8 @@ export async function makeBooking(propertyId, contactInfo, endPoint) {
 
 export async function fetchPropertyDetails(id) {
   try {
-    const userToken = await auth.currentUser.getIdToken();
-    const AuthHeader = authHeader(userToken);
     const propertyResponse = await fetch(
-      finalEndpoints.getPropertyDetail + id,
-      {
-        headers: AuthHeader,
-      }
+      finalEndpoints.getPropertyDetail + id
     );
     if (propertyResponse.ok) {
       const bookings = await propertyResponse.json();
