@@ -23,7 +23,6 @@ export const fetchProperties = (filters, isSearchbar = false) => {
         finalEndpoints.fetchProperties + "?" + formattedFilters
       );
       const list = await res.json();
-      console.log(list);
       if (list.data === null) {
         dispatch(
           fetchPropertiesFailure(
