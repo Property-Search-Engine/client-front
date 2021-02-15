@@ -13,7 +13,7 @@
 
 <h1 align="center">CasaMe: Find the house or office of your dreams</h1>
 
-> CasaMe React admin dashboard
+> CasaMe React Client-front mobile app
 
 ## Configure
 
