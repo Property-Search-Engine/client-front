@@ -2,7 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { Modal, Image } from "react-bootstrap";
-import { fetchProperties,updatePropertiesFilters } from "../../../redux/properties/properties-actions";
+import {
+  fetchProperties,
+  updatePropertiesFilters,
+} from "../../../redux/properties/properties-actions";
 import { svgPath, trimFilters } from "../../../utils/helpers";
 
 import CheckInputs from "../Inputs/CheckInputs";
@@ -16,8 +19,8 @@ import "../Inputs/Inputs.scss";
 function Filters(props) {
   const { filters, setFilters, show, handleShow } = props;
   const handleClose = () => handleShow(false);
-  const handleShowResults = () => {
-    fetchProperties(filters);
+  const handleShowResults = async () => {
+    await fetchProperties(filters);
     handleClose();
   };
 
@@ -50,7 +53,7 @@ function Filters(props) {
           onChange={handleFilterChange}
           values={filters.homeType}
         />
-     
+
         <div className="filtersColumn">
           Bedrooms
           <Image

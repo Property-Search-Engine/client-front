@@ -7,14 +7,12 @@ import PropertyCharacteristics from "../SinglePropertyDetails/PropertyCharacteri
 
 import "./Property.scss";
 
-
 export default function Property(props) {
-
   const history = useHistory();
   const { property, isProperties } = props;
   const { price, bedRooms, bathRooms, surface, _id } = property;
   const { number, street, city } = property.address;
-  
+
   const [heartGrey, setheartGrey] = useState(true);
 
   const handleClick = (e) => {

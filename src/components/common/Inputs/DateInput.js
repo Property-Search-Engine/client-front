@@ -3,10 +3,16 @@ import React from "react";
 import { Image } from "react-bootstrap";
 
 function DateInput(props) {
-
-  const { labelText, labelImgSrc, inputName, placeholder, onChange, value,} = props;
+  const {
+    labelText,
+    labelImgSrc,
+    inputName,
+    placeholder,
+    onChange,
+    value,
+  } = props;
   const handleChange = (e) => onChange(inputName, e.target.value);
-  
+
   return (
     <div className="input-container">
       {labelText && (

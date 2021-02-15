@@ -6,7 +6,6 @@ import HeaderComponent from "../../common/HeaderComponent/HeaderComponent";
 import Properties from "../../common/Properties/Properties";
 
 export default function Results() {
-
   const { city } = useParams();
   const [isOpenFiltersModal, setIsOpenFiltersModal] = useState(false);
   const handleFilterModal = (e) => {

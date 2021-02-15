@@ -3,10 +3,9 @@ import React from "react";
 import { Form, Image } from "react-bootstrap";
 
 function SelectInput(props) {
-
   const { labelText, labelImgSrc, inputName, options, onChange, value } = props;
   const handleChange = (e) => onChange(inputName, e.target.value);
-  
+
   return (
     <Form.Group controlId={inputName} size="sm">
       {labelText && (

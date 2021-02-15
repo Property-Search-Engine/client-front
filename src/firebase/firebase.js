@@ -11,7 +11,7 @@ if (!firebase.apps.length) {
     storageBucket: "casame-app.appspot.com",
     messagingSenderId: "388380745018",
     appId: "1:388380745018:web:60c4269d764a9acdcc8403",
-    measurementId: "G-XF8LS8E7MD"
+    measurementId: "G-XF8LS8E7MD",
   };
 
   firebase.initializeApp(firebaseConfig);
