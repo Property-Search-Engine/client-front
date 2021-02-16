@@ -6,7 +6,6 @@ import "../GroupButtons/GroupButtons.scss";
 export default function GroupButtons(props) {
   const { handleChange, clicked, buttons, filterKey } = props;
   const handleClick = (e) => {
-    
     if (!clicked.some((click) => click === e.target.value)) {
       e.target.classList.add("btn-clicked");
       handleChange(filterKey, [...clicked, e.target.value]);
@@ -15,10 +14,10 @@ export default function GroupButtons(props) {
       handleChange(
         filterKey,
         clicked.filter((item) => item !== e.target.value)
-      ); 
+      );
     }
   };
-  
+
   return (
     <>
       <div className="buttonGroup" onClick={handleClick}>

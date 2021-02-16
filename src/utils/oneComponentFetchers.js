@@ -1,6 +1,6 @@
 import { finalEndpoints } from "./endpoints";
 import { auth } from "../firebase/firebase";
-import { authHeader} from "../utils/helpers";
+import { authHeader } from "../utils/helpers";
 
 export async function makeBooking(propertyId, contactInfo, endPoint) {
   const token = await auth.currentUser.getIdToken();
@@ -25,14 +25,7 @@ export async function makeBooking(propertyId, contactInfo, endPoint) {
 
 export async function fetchPropertyDetails(id) {
   try {
-    const userToken = await auth.currentUser.getIdToken();
-    const AuthHeader = authHeader(userToken);
-    const propertyResponse = await fetch(
-      finalEndpoints.getPropertyDetail + id,
-      {
-        headers: AuthHeader,
-      }
-    );
+    const propertyResponse = await fetch(finalEndpoints.getPropertyDetail + id);
     if (propertyResponse.ok) {
       const bookings = await propertyResponse.json();
       return bookings.data;

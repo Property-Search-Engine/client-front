@@ -4,8 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 
 import { camelCaseStringToCapitalizeString } from "../../../utils/helpers";
 
-import {fetchPropertyDetails} from '../../../utils/oneComponentFetchers'; 
-
+import { fetchPropertyDetails } from "../../../utils/oneComponentFetchers";
 
 import HeaderComponent from "../HeaderComponent/HeaderComponent";
 import Property from "../Property/Property";
@@ -13,14 +12,15 @@ import Property from "../Property/Property";
 import "./PropertyDetails.scss";
 
 function PropertyDetails(props) {
-
   const history = useHistory();
   const { id } = useParams();
   const { properties } = props.propertiesData;
   const { userState } = props;
   const property = properties.filter((property) => id === property._id)[0];
 
-  const [fullDataProperty, setFullDataProperty] = useState(fetchPropertyDetails(property._id));
+  const [fullDataProperty, setFullDataProperty] = useState(
+    fetchPropertyDetails(property._id)
+  );
   const [isFetched, setIsFetched] = useState(false);
 
   useEffect(() => {

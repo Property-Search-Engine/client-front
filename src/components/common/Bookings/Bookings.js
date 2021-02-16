@@ -11,7 +11,6 @@ import HeaderComponent from "../HeaderComponent/HeaderComponent";
 
 import "./Bookings.sass";
 
-
 class Bookings extends React.Component {
   constructor(props) {
     super(props);

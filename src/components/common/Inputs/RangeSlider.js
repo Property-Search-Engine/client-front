@@ -16,7 +16,6 @@ function valuetext(value) {
 }
 
 export default function RangeSlider({ setFilters }) {
-  
   const classes = useStyles();
   const [value, setValue] = useState([0, 900000]);
   const handleChange = (event, [min, max]) => {

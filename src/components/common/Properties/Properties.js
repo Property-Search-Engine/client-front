@@ -14,7 +14,7 @@ function Properties(props) {
   if (firstCall) {
     fetchProperties(filters);
   }
-  
+
   if (propertiesData.loading)
     return <div className="w-100 text-center">Loading...</div>;
 

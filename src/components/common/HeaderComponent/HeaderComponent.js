@@ -19,7 +19,7 @@ export default function HeaderComponent(props) {
   function handleHomeClick(e) {
     history.push(ROUTES.MAIN);
   }
-  
+
   return (
     <div className="navHeader">
       {main ? (
